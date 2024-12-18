@@ -30,6 +30,8 @@ module Proxy::RemoteExecution::Ssh
                      :mqtt_resend_interval    => 900,
                      :mqtt_ttl                => 5
 
+    expose_setting  :mode
+
     capability(proc { 'cockpit' if settings.cockpit_integration })
 
     plugin :script, Proxy::RemoteExecution::Ssh::VERSION
